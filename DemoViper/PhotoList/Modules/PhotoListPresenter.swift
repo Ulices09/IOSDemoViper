@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+protocol PhotoListPresenterInput: PhotoListVCOutput {
+    
+}
+
+class PhotoListPresenter: PhotoListPresenterInput {
+    
+    var interactor: PhotoListInteractorInput!
+    
+    func fetchPhotos(_ searchTags: String, page: NSInteger) {
+        interactor.fetchAllPhotosFromDataManager(searchTags, page: page)
+    }
+}

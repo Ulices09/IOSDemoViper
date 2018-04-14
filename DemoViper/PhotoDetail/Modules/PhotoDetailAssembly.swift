@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+struct FlickrPhoto {
+    var id: String
+    var farm: Int
+    var secret: String
+    var server: String
+    var title: String
+    
+    var photoURL: NSURL {
+        return flickerPhotoImageURL()
+    }
+    
+    var largePhotoURL: NSURL {
+        return flickerPhotoImageURL(size: "b")
+    }
+    
+    private func flickerPhotoImageURL(size: String = "m") -> NSURL {
+        return NSURL(string: "https://farm\(self.farm).staticflickr.com/\(self.server)/\(self.id)_\(self.secret)_\(size).jpg")!
+    }
+}

@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class PhotoListAssembly {
+    
+    static let sharedInstance = PhotoListAssembly()
+    
+    func configure(_ viewController: PhotoListVC) {
+        let APIDataManager = FlickrPhotoDataManager()
+        let interactor = PhotoListInteractor()
+        let presenter = PhotoListPresenter()
+        
+        viewController.presenter = presenter
+        presenter.interactor = interactor
+        interactor.APIDataManager = APIDataManager
+        
+    }
+}
