@@ -86,7 +86,7 @@
                     <navigationItem key="navigationItem" id="rXK-2H-Ey1"/>
                     <connections>
                         <outlet property="photoCollectionView" destination="6aZ-sx-z4K" id="l4D-g0-VHd"/>
-                        <segue destination="euy-tQ-ZFV" kind="show" identifier="ShowDetailVC" id="q2W-Ys-Adr"/>
+                        <segue destination="euy-tQ-ZFV" kind="show" identifier="ShowPhotoDetailVC" id="q2W-Ys-Adr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

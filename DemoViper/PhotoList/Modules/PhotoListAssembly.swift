@@ -16,10 +16,16 @@ class PhotoListAssembly {
         let APIDataManager = FlickrPhotoDataManager()
         let interactor = PhotoListInteractor()
         let presenter = PhotoListPresenter()
+        let router = PhotoListRouter()
         
         viewController.presenter = presenter
+        
+        router.viewController = viewController
+        
         presenter.view = viewController
+        presenter.router = router
         presenter.interactor = interactor
+        
         interactor.presenter = presenter
         interactor.APIDataManager = APIDataManager
         

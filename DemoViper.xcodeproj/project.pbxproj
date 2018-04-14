@@ -185,8 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				5FCB64E2208165C300EEFD83 /* PhotoDetailVC.swift */,
-				5FCB64EC2081677C00EEFD83 /* PhotoDetailInteractor.swift */,
 				5FCB64F0208167CA00EEFD83 /* PhotoDetailPresenter.swift */,
+				5FCB64EC2081677C00EEFD83 /* PhotoDetailInteractor.swift */,
 				5FCB64F6208168CF00EEFD83 /* PhotoDetailRouter.swift */,
 				5FCB64FB2081692500EEFD83 /* PhotoDetailAssembly.swift */,
 			);
@@ -207,8 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				5FCB64E42081666800EEFD83 /* PhotoListVC.swift */,
-				5FCB64EA2081676F00EEFD83 /* PhotoListInteractor.swift */,
 				5FCB64EE208167BE00EEFD83 /* PhotoListPresenter.swift */,
+				5FCB64EA2081676F00EEFD83 /* PhotoListInteractor.swift */,
 				5FCB64F4208168BD00EEFD83 /* PhotoListRouter.swift */,
 				5FCB64F8208168F700EEFD83 /* PhotoListAssembly.swift */,
 			);

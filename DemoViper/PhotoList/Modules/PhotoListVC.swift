@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class PhotoListVC: UIViewController, PhotoListVCInput {
     
     @IBOutlet weak var photoCollectionView: UICollectionView!
@@ -58,6 +56,32 @@ class PhotoListVC: UIViewController, PhotoListVCInput {
         errorAlert.addAction(okAction)
         
         present(errorAlert, animated: true, completion: nil)
+    }
+    
+    //MARK:- ActivityView
+    func showLoadingView() {
+        let alert = UIAlertController(title: nil, message: loadingKey, preferredStyle: .alert)
+        alert.view.tintColor = UIColor.black
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 60))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = .gray
+        loadingIndicator.startAnimating()
+        alert.view.addSubview(loadingIndicator)
+        
+        self.navigationController?.present(alert, animated: true, completion: nil)
+    }
+    
+    func hideLoadingView() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func getPhotosCount() -> NSInteger {
+        return self.photos.count
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        presenter.passDataToNextScene(segue)
     }
 
 }
@@ -111,7 +135,7 @@ extension PhotoListVC: UICollectionViewDataSource {
 // MARK:- UICollectionViewDelegate
 extension PhotoListVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        return
+        self.presenter.navigateToPhotoDetailScreen()
     }
 }
 

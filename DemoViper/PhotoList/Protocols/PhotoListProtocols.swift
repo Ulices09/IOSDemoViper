@@ -8,13 +8,24 @@
 
 import UIKit
 
+protocol PhotoListRouterInput: class {
+    func navigateToPhotoDetail()
+    func passDataToNextScene(_ segue: UIStoryboardSegue)
+}
+
 protocol PhotoListVCOutput: class {
     func fetchPhotos(_ searchTags: String, page: NSInteger)
+    func navigateToPhotoDetailScreen()
+    func passDataToNextScene(_ segue: UIStoryboardSegue)
 }
 
 protocol PhotoListVCInput: class {
     func displayFetchedPhotos(_ photos: [FlickrPhoto], totalPhotos: NSInteger)
     func displayErrorView(_ errorMessage: String)
+    func showLoadingView()
+    func hideLoadingView()
+    func getPhotosCount() -> NSInteger
+    
 }
 
 protocol PhotoListPresenterInput: PhotoListVCOutput, PhotoListInteractorOutput {

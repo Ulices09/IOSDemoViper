@@ -12,5 +12,8 @@ import SDWebImage
 
 protocol FlickrPhotoListProtocol: class {
     func fetchFlickerPhotos(searchText: String, page: NSInteger, closure: @escaping (NSError?, NSInteger, [FlickrPhoto]?) -> Void) -> Void
+}
+
+protocol FlickrPhotoLoadImageProtocol: class {
     func loadImageFromURL(_ url: NSURL, closure: @escaping (UIImage?, NSError?) -> Void)
 }

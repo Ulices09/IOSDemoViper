@@ -9,7 +9,7 @@
 import Foundation
 import SDWebImage
 
-class FlickrPhotoDataManager: FlickrPhotoListProtocol {
+class FlickrPhotoDataManager: FlickrPhotoListProtocol, FlickrPhotoLoadImageProtocol {
     
     static let sharedInstance = FlickrPhotoDataManager()
     

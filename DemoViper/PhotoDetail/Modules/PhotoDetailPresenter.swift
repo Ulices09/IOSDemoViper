@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+//protocol PhotoDetailPresenterInput: PhotoDetailInteractorOutput {
+//    
+//}
+//
+//class PhotoDetailPresenter: PhotoDetailPresenterInput {
+//    
+//    var interactor: PhotoDetailInteractorInput!
+//    
+//    func saveSelectedFlickerPhoto(_ flickerPhoto: FlickrPhoto) {
+//        self.interactor.conf
+//    }
+//    
+//    func configureFlickrPhoto(_ flickerPhoto: FlickrPhoto) {
+//        <#code#>
+//    }
+//    
+//}
