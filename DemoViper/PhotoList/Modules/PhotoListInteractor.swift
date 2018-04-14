@@ -8,20 +8,17 @@
 
 import Foundation
 
-protocol PhotoListInteractorInput: class {
-    func fetchAllPhotosFromDataManager(_ searchTags: String, page: NSInteger)
-}
-
 class PhotoListInteractor: PhotoListInteractorInput {
     
+    weak var presenter: PhotoListInteractorOutput!
     var APIDataManager: FlickrPhotoListProtocol!
     
     func fetchAllPhotosFromDataManager(_ searchTags: String, page: NSInteger) {
         APIDataManager.fetchFlickerPhotos(searchText: searchTags, page: page) {(error, total, flickerPhotos) in
             if let photos = flickerPhotos {
-                print(photos)
+                self.presenter.providePhotos(photos, total: total)
             } else if let error = error {
-                print(error)
+                self.presenter.serviceError(error)
             }
         }
     }

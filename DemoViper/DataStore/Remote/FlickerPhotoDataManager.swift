@@ -7,10 +7,7 @@
 //
 
 import Foundation
-
-protocol FlickrPhotoListProtocol: class {
-    func fetchFlickerPhotos(searchText: String, page: NSInteger, clousure: @escaping (NSError?, NSInteger, [FlickrPhoto]?) -> Void) -> Void
-}
+import SDWebImage
 
 class FlickrPhotoDataManager: FlickrPhotoListProtocol {
     
@@ -29,7 +26,7 @@ class FlickrPhotoDataManager: FlickrPhotoListProtocol {
         static let failureStatusCode = "code"
     }
     
-    func fetchFlickerPhotos(searchText: String, page: NSInteger, clousure: @escaping (NSError?, NSInteger, [FlickrPhoto]?) -> Void) -> Void {
+    func fetchFlickerPhotos(searchText: String, page: NSInteger, closure: @escaping (NSError?, NSInteger, [FlickrPhoto]?) -> Void) -> Void {
         let scapedSearchText = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         
         let format = FlickerAPI.tagsSearchFormat
@@ -47,7 +44,7 @@ class FlickrPhotoDataManager: FlickrPhotoListProtocol {
         let searchTask = URLSession.shared.dataTask(with: request) {(data, response, error) in
             if error != nil {
                 print("Error on fetching photos -> \(error)")
-                clousure(error as NSError?, 0, nil)
+                closure(error as NSError?, 0, nil)
             }
             
             do {
@@ -58,7 +55,7 @@ class FlickrPhotoDataManager: FlickrPhotoListProtocol {
                 if let statusCode = result[FlickerAPIMetaDataKeys.failureStatusCode] as? Int {
                     if statusCode == Errors.invalidAccessErrorCode {
                         let invalidAccessError = NSError(domain: "FlickerAPIDomain", code: statusCode, userInfo: nil)
-                        clousure(invalidAccessError, 0, nil)
+                        closure(invalidAccessError, 0, nil)
                         return
                     }
                 }
@@ -81,16 +78,51 @@ class FlickrPhotoDataManager: FlickrPhotoListProtocol {
                     return flickerPhoto
                 })
                 
-                clousure(nil, totalPageCount, flickerPhotos)
+                closure(nil, totalPageCount, flickerPhotos)
                 
                 
             } catch let error as NSError {
                 print("Error on parsing JSON -> \(error)")
-                clousure(error, 0, nil)
+                closure(error, 0, nil)
             }
         }
-        
         searchTask.resume()
     }
     
+    // Memory Cache Photo Services
+    func loadImageFromURL(_ url: NSURL, closure: @escaping (UIImage?, NSError?) -> Void) {
+        SDWebImageManager.shared().imageDownloader?.downloadImage(with: url as URL, options: .useNSURLCache, progress: nil) { (image, data, error, finished) in
+            if(image != nil && finished) {
+                closure(image, error! as NSError)
+            }
+        }
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

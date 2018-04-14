@@ -9,3 +9,5 @@
 import Foundation
 
 let photoSearchKey = "anime"
+let errorTitle = "Something went wrong x.x"
+let errorMessageService = "Couldn't retrieve data"

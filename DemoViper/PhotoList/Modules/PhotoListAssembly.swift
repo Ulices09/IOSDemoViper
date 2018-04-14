@@ -18,8 +18,11 @@ class PhotoListAssembly {
         let presenter = PhotoListPresenter()
         
         viewController.presenter = presenter
+        presenter.view = viewController
         presenter.interactor = interactor
+        interactor.presenter = presenter
         interactor.APIDataManager = APIDataManager
+        
         
     }
 }

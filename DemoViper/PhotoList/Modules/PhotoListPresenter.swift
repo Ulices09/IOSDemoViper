@@ -8,15 +8,20 @@
 
 import Foundation
 
-protocol PhotoListPresenterInput: PhotoListVCOutput {
-    
-}
-
 class PhotoListPresenter: PhotoListPresenterInput {
     
+    weak var view: PhotoListVCInput!
     var interactor: PhotoListInteractorInput!
     
     func fetchPhotos(_ searchTags: String, page: NSInteger) {
         interactor.fetchAllPhotosFromDataManager(searchTags, page: page)
+    }
+    
+    func providePhotos(_ photos: [FlickrPhoto], total: NSInteger) {
+        self.view.displayFetchedPhotos(photos, totalPhotos: total)
+    }
+    
+    func serviceError(_ error: NSError) {
+        self.view.displayErrorView(errorMessageService)
     }
 }
