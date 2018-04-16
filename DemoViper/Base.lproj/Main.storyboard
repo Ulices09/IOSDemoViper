@@ -136,6 +136,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Adu-fz-kfY"/>
                     </view>
+                    <connections>
+                        <outlet property="largePhotoImageView" destination="P7X-lf-Vs5" id="h6h-kv-1ev"/>
+                        <outlet property="photoTitleLabel" destination="mJp-Ad-ZSG" id="uef-Of-fwk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7eb-M8-3ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

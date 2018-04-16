@@ -93,7 +93,7 @@ class FlickrPhotoDataManager: FlickrPhotoListProtocol, FlickrPhotoLoadImageProto
     func loadImageFromURL(_ url: NSURL, closure: @escaping (UIImage?, NSError?) -> Void) {
         SDWebImageManager.shared().imageDownloader?.downloadImage(with: url as URL, options: .useNSURLCache, progress: nil) { (image, data, error, finished) in
             if(image != nil && finished) {
-                closure(image, error! as NSError)
+                closure(image, error as NSError?)
             }
         }
     }

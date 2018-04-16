@@ -13,6 +13,8 @@
 		5F2DBA262081AC3D00268F13 /* PhotoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DBA252081AC3D00268F13 /* PhotoItemCell.swift */; };
 		5F2DBA282081AC6200268F13 /* PhotoLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DBA272081AC6200268F13 /* PhotoLoadingCell.swift */; };
 		5F2DBA2D2081B42100268F13 /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DBA2C2081B42100268F13 /* ReuseIdentifier.swift */; };
+		5F310982208461C80010136A /* PhotoDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F310981208461C80010136A /* PhotoDetailAssembly.swift */; };
+		5F31098520846A2C0010136A /* PhotoDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F31098420846A2C0010136A /* PhotoDetailProtocol.swift */; };
 		5F3D63EA2081829700E705E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D63E92081829700E705E4 /* Constants.swift */; };
 		5FCB64CF20815F8700EEFD83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCB64CE20815F8700EEFD83 /* AppDelegate.swift */; };
 		5FCB64D420815F8700EEFD83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FCB64D220815F8700EEFD83 /* Main.storyboard */; };
@@ -27,7 +29,7 @@
 		5FCB64F5208168BD00EEFD83 /* PhotoListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCB64F4208168BD00EEFD83 /* PhotoListRouter.swift */; };
 		5FCB64F7208168CF00EEFD83 /* PhotoDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCB64F6208168CF00EEFD83 /* PhotoDetailRouter.swift */; };
 		5FCB64F9208168F700EEFD83 /* PhotoListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCB64F8208168F700EEFD83 /* PhotoListAssembly.swift */; };
-		5FCB64FC2081692500EEFD83 /* PhotoDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCB64FB2081692500EEFD83 /* PhotoDetailAssembly.swift */; };
+		5FCB64FC2081692500EEFD83 /* FlickerPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCB64FB2081692500EEFD83 /* FlickerPhoto.swift */; };
 		5FCB64FE2081717800EEFD83 /* FlickerPhotoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCB64FD2081717800EEFD83 /* FlickerPhotoDataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		5F2DBA252081AC3D00268F13 /* PhotoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItemCell.swift; sourceTree = "<group>"; };
 		5F2DBA272081AC6200268F13 /* PhotoLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLoadingCell.swift; sourceTree = "<group>"; };
 		5F2DBA2C2081B42100268F13 /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
+		5F310981208461C80010136A /* PhotoDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailAssembly.swift; sourceTree = "<group>"; };
+		5F31098420846A2C0010136A /* PhotoDetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailProtocol.swift; sourceTree = "<group>"; };
 		5F3D63E92081829700E705E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5FCB64CB20815F8700EEFD83 /* DemoViper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoViper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCB64CE20815F8700EEFD83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +58,7 @@
 		5FCB64F4208168BD00EEFD83 /* PhotoListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListRouter.swift; sourceTree = "<group>"; };
 		5FCB64F6208168CF00EEFD83 /* PhotoDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailRouter.swift; sourceTree = "<group>"; };
 		5FCB64F8208168F700EEFD83 /* PhotoListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListAssembly.swift; sourceTree = "<group>"; };
-		5FCB64FB2081692500EEFD83 /* PhotoDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailAssembly.swift; sourceTree = "<group>"; };
+		5FCB64FB2081692500EEFD83 /* FlickerPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerPhoto.swift; sourceTree = "<group>"; };
 		5FCB64FD2081717800EEFD83 /* FlickerPhotoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerPhotoDataManager.swift; sourceTree = "<group>"; };
 		7D587B8519191793CE1FCC3D /* Pods-DemoViper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoViper.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoViper/Pods-DemoViper.release.xcconfig"; sourceTree = "<group>"; };
 		C10D792D2D9F64CF17EC7968 /* Pods_DemoViper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoViper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +141,14 @@
 			path = ReuseIdentifier;
 			sourceTree = "<group>";
 		};
+		5F31098320846A160010136A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5F31098420846A2C0010136A /* PhotoDetailProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		5FCB64C220815F8600EEFD83 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +188,7 @@
 		5FCB64E6208166D200EEFD83 /* PhotoDetail */ = {
 			isa = PBXGroup;
 			children = (
+				5F31098320846A160010136A /* Protocols */,
 				5FCB64E7208166DD00EEFD83 /* Modules */,
 			);
 			path = PhotoDetail;
@@ -188,7 +201,7 @@
 				5FCB64F0208167CA00EEFD83 /* PhotoDetailPresenter.swift */,
 				5FCB64EC2081677C00EEFD83 /* PhotoDetailInteractor.swift */,
 				5FCB64F6208168CF00EEFD83 /* PhotoDetailRouter.swift */,
-				5FCB64FB2081692500EEFD83 /* PhotoDetailAssembly.swift */,
+				5F310981208461C80010136A /* PhotoDetailAssembly.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -218,6 +231,7 @@
 		5FCB64F22081682200EEFD83 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5FCB64FB2081692500EEFD83 /* FlickerPhoto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,6 +373,7 @@
 				5FCB64F1208167CA00EEFD83 /* PhotoDetailPresenter.swift in Sources */,
 				5FCB64EF208167BE00EEFD83 /* PhotoListPresenter.swift in Sources */,
 				5F2DBA282081AC6200268F13 /* PhotoLoadingCell.swift in Sources */,
+				5F31098520846A2C0010136A /* PhotoDetailProtocol.swift in Sources */,
 				5F12221D20824DD50032DEB3 /* PhotoListProtocols.swift in Sources */,
 				5F2DBA2D2081B42100268F13 /* ReuseIdentifier.swift in Sources */,
 				5FCB64F9208168F700EEFD83 /* PhotoListAssembly.swift in Sources */,
@@ -368,7 +383,8 @@
 				5FCB64CF20815F8700EEFD83 /* AppDelegate.swift in Sources */,
 				5FCB64E52081666800EEFD83 /* PhotoListVC.swift in Sources */,
 				5FCB64F5208168BD00EEFD83 /* PhotoListRouter.swift in Sources */,
-				5FCB64FC2081692500EEFD83 /* PhotoDetailAssembly.swift in Sources */,
+				5FCB64FC2081692500EEFD83 /* FlickerPhoto.swift in Sources */,
+				5F310982208461C80010136A /* PhotoDetailAssembly.swift in Sources */,
 				5F12222220824F430032DEB3 /* DataStoreRemoteProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

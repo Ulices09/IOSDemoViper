@@ -8,28 +8,33 @@
 
 import UIKit
 
-class PhotoDetailVC: UIViewController {
+class PhotoDetailVC: UIViewController, PhotoDetailVCInput {
+    
+    @IBOutlet weak var photoTitleLabel: UILabel!
+    @IBOutlet weak var largePhotoImageView: UIImageView!
+    
+    var presenter: PhotoDetailVCOutput!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        PhotoDetailAssembly.sharedInstance.configure(self)
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.presenter.getPhotoImageTitle()
+        self.presenter.loadLargePhotoImage()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //Result from presenter
+    func addLargeLadedPhoto(_ largePhoto: UIImage) {
+        self.largePhotoImageView.image = largePhoto
     }
-    */
+    
+    func AddPhotoImageTitle(_ title: String) {
+        self.photoTitleLabel.text = title
+    }
 
 }
